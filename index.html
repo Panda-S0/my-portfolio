@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Aslam Emara CV</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+    <div class="top-banner">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="#" id="about-me-button">about me</a>
+        <a href="#projects" id="projects-button">projects</a>
+        <a href="#contact-content" id="contacts-button">contacts</a>
+      </div>
+    </div>
+
+   
+    <section id="header-content">
+      <header>
+        <div class="header-content">
+          <h1>Aslam Emara</h1>
+          <p>Software Developer | Game Designer</p>
+          <div class="social-links">
+            <a href="mailto:sfamilypanda0.1@gmail.com">Email <i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/aslam-emara-647246324/" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Panda-S0" target="_blank">GitHub <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </header>
+
+      <div id="info-container">
+        <div id="about-me" class="info-card">
+          <h2>About Me</h2>
+          <p>
+            Hello! I’m a passionate developer with experience in web and
+            game development. I specialize in creating seamless user
+            experiences and functional applications.
+          </p>
+        </div>
+
+        <div id="skills" class="info-card">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>React Native</li>
+            <li>Game Development (Godot, Pygame, JavaScript)</li>
+            <li>Design Tools (Figma)</li>
+          </ul>
+        </div>
+
+        <div id="education" class="info-card">
+          <h2>Education</h2>
+          <p><strong>Bachelor of Mechatronic engineering</strong></p>
+          <p>Okan University | 2022 - present</p>
+          <p>-------------------</p>
+          <p><strong>Bachelor of Electrical and electronic engineering</strong></p>
+          <p>Isik University | 2021 - 2022</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="card-container">
+        <div class="card">
+          <!-- Background Left Image -->
+          <div class="card-bg-left">
+            <img src="assets/falling-sand.jpg" alt="Background Image 1" />
+          </div>
+          <!-- Background Right Image -->
+          <div class="card-bg-right">
+            <img src="assets/sigmented-clock.jpg" alt="Background Image 2" />
+          </div>
+
+          <div class="filler"></div>
+          <img src="assets/python.png" alt="Python Logo" />
+          <p><strong>5 years of experience</strong> in Python programming<br><br>self taugh</p>
+          <button onclick="location.href='/projects.html'">
+            Learn More
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-bg-left">
+            <img src="assets/chatroom-app.jpg" alt="Background Image 1" />
+          </div>
+          <div class="card-bg-right">
+            <img src="assets/foot-to-home.jpg" alt="Background Image 2" />
+          </div>
+
+          <div class="filler"></div>
+          <img src="assets/react-native.png" alt="React Native Logo" />
+          <p><strong>2 years of experience</strong> in React Native app making<br><br>self taugh</p>
+          <button onclick="location.href='/projects.html'">
+            Learn More
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-bg-left">
+            <img src="assets/blind-cat.jpg" alt="Background Image 1" />
+          </div>
+          <div class="card-bg-right">
+            <img src="assets/placeholder-image.jpg" alt="Background Image 2" />
+          </div>
+
+          <div class="filler"></div>
+          <img src="assets/godot.png" alt="Godot Logo" />
+          <p><strong>1 year of experience</strong> in godot game development<br><br>self taugh</p>
+          <button onclick="location.href='/projects.html'">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact-content">
+      <div id="contact">
+        <h2>Contact Me</h2>
+        <form action="#">
+          <input type="text" id="name" name="name" required placeholder="Your Name" />
+
+          <input type="email" id="email" name="email" required placeholder="Your Email" />
+
+          <textarea id="message" name="message" required rows="4" placeholder="Write me a message . . ."></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Aslam Emara. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
