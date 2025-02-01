@@ -18,6 +18,17 @@
   font-family: Arial, sans-serif;
 }
 
+.dot {
+  z-index: 10;
+  background: white;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%; /* Make it a circle */
+  position: fixed; /* Position relative to the page */
+  pointer-events: none; /* Prevent blocking clicks */
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* Smooth fade-out effect */
+}
 
 /* Body */
 body {
