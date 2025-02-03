@@ -49,12 +49,12 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--hover-color);
+  background: var(--secondary-color);
   border-radius: 4px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+  background: var(--hover-color);
 }
 
 /* Top Navigation Bar */

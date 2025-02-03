@@ -35,36 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-const cards = document.querySelectorAll(".card-container .card")
 
-cards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    cards.forEach((sibling) => {
-      if (sibling !== card) {
-        sibling.style.filter = "brightness(0.4)" // Darken all siblings except the hovered one
-      }
-    })
-  })
 
-  card.addEventListener("mouseleave", () => {
-    cards.forEach((sibling) => (sibling.style.filter = "")) // Reset the filter
-  })
-})
+// // Get the top banner element
+// const topBanner = document.querySelector(".top-banner")
 
-// Get the top banner element
-const topBanner = document.querySelector(".top-banner")
-
-// Function to handle the scroll event
-function handleScroll() {
-  // Check if the user has scrolled down more than 50 pixels (adjust as needed)
-  if (window.scrollY > 50) {
-    // Add the 'scrolled' class to the banner
-    topBanner.classList.add("scrolled")
-  } else {
-    // Remove the 'scrolled' class if the user is at the top of the page
-    topBanner.classList.remove("scrolled")
-  }
-}
+// // Function to handle the scroll event
+// function handleScroll() {
+//   // Check if the user has scrolled down more than 50 pixels (adjust as needed)
+//   if (window.scrollY > 50) {
+//     // Add the 'scrolled' class to the banner
+//     topBanner.classList.add("scrolled")
+//   } else {
+//     // Remove the 'scrolled' class if the user is at the top of the page
+//     topBanner.classList.remove("scrolled")
+//   }
+// }
 
 // Add the scroll event listener to the window
 window.addEventListener("scroll", handleScroll)
