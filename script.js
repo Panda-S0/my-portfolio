@@ -1,19 +1,19 @@
 window.onmousemove = (e) => {
-  const dot = document.createElement("div");
-  dot.className = "dot";
+  const dot = document.createElement("div")
+  dot.className = "dot"
 
   // Position the dot at the mouse location
-  dot.style.left = `${e.clientX}px`;
-  dot.style.top = `${e.clientY}px`;
+  dot.style.left = `${e.clientX}px`
+  dot.style.top = `${e.clientY}px`
 
-  document.body.appendChild(dot);
+  document.body.appendChild(dot)
 
   // Gradually fade out
   setTimeout(() => {
-    dot.style.opacity = "0";
-    setTimeout(() => dot.remove(), 500); // Remove after fade-out
-  }, 50);
-};
+    dot.style.opacity = "0"
+    setTimeout(() => dot.remove(), 500) // Remove after fade-out
+  }, 50)
+}
 
 // Simple form validation example
 document.addEventListener("DOMContentLoaded", function () {
@@ -101,5 +101,3 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 })
-
-
