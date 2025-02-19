@@ -17,8 +17,8 @@
 }
 
 .dot {
-  z-index: 10;
-  background: white;
+  z-index: 101;
+  background: #dabfff;
   height: 5px;
   width: 5px;
   border-radius: 50%; /* Make it a circle */
@@ -35,6 +35,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   padding: 0px;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
@@ -68,7 +69,7 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: space-between;
   padding: 0 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 100;
   transition: background-color 0.3s ease;
 }
 
@@ -104,10 +105,8 @@ body::-webkit-scrollbar-thumb:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  padding: 20px;
+  height: auto; /* Remove fixed height */
+  padding: 100px 20px; /* Add padding for spacing */
   background: linear-gradient(
     to bottom,
     var(--primary-color),
@@ -120,12 +119,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 2.5em; /* Smaller font size for mobile */
   margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1.2em;
+  font-size: 1em; /* Smaller font size for mobile */
   margin-bottom: 20px;
 }
 
@@ -158,7 +157,6 @@ header p {
 }
 
 .info-card {
-  /* background: rgba(255, 255, 255, 0.05); */
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.05),
@@ -199,42 +197,20 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-/* .skills-list li:hover {
-  background-color: var(--secondary-color);
-} */
-
 /* Education */
 #education p {
   margin-bottom: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 10px;
-  }
-
-  .header-content h1 {
-    font-size: 2em;
-  }
-
-  .header-content p {
-    font-size: 1em;
-  }
-
-  .info-card {
-    max-width: 100%;
-  }
-}
 /* PROJECTS */
-
 #projects {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: var(--bg-color); /* Dark background */
-  color: var(--text-color); /* Light text */
+  height: auto; /* Remove fixed height */
+  padding: 50px 20px; /* Add padding for spacing */
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .card-container {
@@ -246,8 +222,8 @@ h2 {
 
 .card {
   position: relative;
-  width: 250px;
-  height: 60vh;
+  width: 20%;
+  height: 50vh;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -255,11 +231,23 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow: hidden; */
   transition: filter 0.3s ease-in-out;
-  z-index: 1; /* Card on top */
-  transition: filter 0.3s ease;
 }
+
+.card:hover {
+  z-index: 3;
+}
+
+.card:not(:hover) {
+  animation: zIndexChange 0.5s forwards;
+}
+
+@keyframes zIndexChange {
+  0% { z-index: 2; }
+  99% { z-index: 2; }
+  100% { z-index: 1; }
+}
+
 .filler {
   position: absolute;
   width: 100%;
@@ -271,7 +259,6 @@ h2 {
   border-radius: 10px;
 }
 
-/* Logo in each card */
 .card img {
   width: 80px;
   height: 80px;
@@ -304,14 +291,13 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Left side and right side images */
 .card-bg-left,
 .card-bg-right {
   position: absolute;
   top: 0;
   width: 90%;
   height: 90%;
-  z-index: -3; /* Behind the card */
+  z-index: -3;
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -319,12 +305,12 @@ h2 {
 
 .card-bg-left {
   left: 0;
-  transform: translateX(-30px) rotate(-5deg); /* Slight tilt */
+  transform: translateX(-30px) rotate(-5deg);
 }
 
 .card-bg-right {
   right: 0;
-  transform: translateX(30px) rotate(5deg); /* Slight tilt */
+  transform: translateX(30px) rotate(5deg);
 }
 
 .card-bg-left img,
@@ -335,31 +321,31 @@ h2 {
   object-position: center;
 }
 
-/* Hover effect to move the images */
 .card:hover .card-bg-left {
   transform: translateX(-120px) translateY(-10px) scale(1.1)
-    rotate(-12deg); /* Tilt more when hovered */
+    rotate(-12deg);
   opacity: 1;
 }
 
 .card:hover .card-bg-right {
-  transform: translateX(120px) translateY(-10px) scale(1.1) rotate(12deg); /* Tilt more when hovered */
+  transform: translateX(120px) translateY(-10px) scale(1.1) rotate(12deg);
   opacity: 1;
 }
+
 
 /* CONTACT SECTION */
 #contact-content {
   display: flex;
   justify-content: right;
   align-items: center;
-  height: 50vh; /* Half of the viewport */
+  height: auto; /* Auto height for content */
+  padding: 50px 20px; /* Add padding for spacing */
   background: linear-gradient(
     to bottom,
     var(--bg-color),
     var(--primary-color)
   );
   color: var(--text-color);
-  padding: 30px;
 }
 
 #contact {
@@ -378,14 +364,12 @@ h2 {
   font-size: 1.8rem;
 }
 
-/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* Animated Inputs */
 form input,
 form textarea {
   resize: none;
@@ -399,7 +383,6 @@ form textarea {
   transition: all 0.3s ease-in-out;
 }
 
-/* Input Animation on Focus */
 form input:focus,
 form textarea:focus {
   outline: none;
@@ -408,20 +391,17 @@ form textarea:focus {
   transform: scale(1.02);
 }
 
-/* Placeholder Styling */
 form input::placeholder,
 form textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Error Message */
 .error-message {
   color: #ff4d4d;
   font-size: 0.85rem;
   display: none;
 }
 
-/* Button Animation */
 button {
   background-color: var(--hover-color);
   color: var(--bg-color);
@@ -433,20 +413,52 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-/* Button Hover Effect */
 button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-2px) scale(1.05);
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
+
+
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .nav-links {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .top-banner {
+    padding: 0 10px; /* Reduce padding */
+  }
+
+  #info-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .info-card {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 50%; /* Wider cards on mobile */
+    height: auto; /* Auto height for content */
+    margin-bottom: 20px; /* Add spacing between cards */
+  }
+
   #contact-content {
-    height: auto;
+    height: auto; /* Auto height for content */
     padding: 20px;
   }
+
   #contact {
-    width: 90%;
+    width: 90%; /* Full width on mobile */
   }
 }
 
@@ -456,26 +468,6 @@ footer {
   color: white;
   padding: 15px 0;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8em; /* Smaller font size for mobile */
 }
 
-footer ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-}
-
-footer ul li {
-  margin: 0 10px;
-}
-
-footer ul li a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-footer ul li a:hover {
-  text-decoration: underline;
-}
