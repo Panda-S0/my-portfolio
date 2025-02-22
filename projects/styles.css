@@ -403,8 +403,8 @@ button:active {
     justify-content: flex-end;
   }
   .changeProjectButtonsContainer .click {
-    width: 50%;
-  }
+    width: 40%;
+  }.changeProjectButtonsContainer{justify-content: space-between;}
 }
 
 /* FOOTER */
